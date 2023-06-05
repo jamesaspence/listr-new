@@ -1,7 +1,7 @@
 {
-  "name": "listr-v2",
+  "name": "listr",
   "private": true,
-  "version": "0.0.0",
+  "version": "2.0.0-alpha",
   "type": "module",
   "engines": {
     "node": "18.16.0"

@@ -1924,9 +1924,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"listr-v2@workspace:.":
+"listr@workspace:.":
   version: 0.0.0-use.local
-  resolution: "listr-v2@workspace:."
+  resolution: "listr@workspace:."
   dependencies:
     "@types/react": ^18.0.37
     "@types/react-dom": ^18.0.11
