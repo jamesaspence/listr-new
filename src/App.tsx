@@ -1,9 +1,12 @@
+import { Header } from './common/Header.tsx';
+
 function App() {
   return (
-    <h1>
-      Hello
-    </h1>
-  )
+    <div>
+      <Header />
+      <h1>Hello</h1>
+    </div>
+  );
 }
 
-export default App
+export default App;

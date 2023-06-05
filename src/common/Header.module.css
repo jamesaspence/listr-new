@@ -1,0 +1,29 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    background-color: #252536;
+    padding: 24px;
+    align-items: center;
+}
+
+.logo {
+    width: 48px;
+    height: 48px;
+    display: inline-block;
+    border-radius: 50%;
+}
+
+.textWrapper {
+    display: flex;
+    flex-direction: column;
+    margin-left: 12px;
+}
+
+.headerText {
+    margin: 0;
+}
+
+.headerVersion {
+    display: block;
+    color: #aaa;
+}
