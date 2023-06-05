@@ -7,3 +7,9 @@ html, body {
     background-color: #1c1b1b;
     color: #fff;
 }
+
+#root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
