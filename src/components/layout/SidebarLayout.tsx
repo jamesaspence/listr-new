@@ -1,4 +1,4 @@
-import { Sidebar } from './Sidebar.tsx';
+import { Sidebar } from '../sidebar/Sidebar.tsx';
 import { MainContent } from './MainContent.tsx';
 import { ReactNode } from 'react';
 import styles from './SidebarLayout.module.css';
