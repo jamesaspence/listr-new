@@ -1,5 +1,5 @@
 import {
-  createSelector,
+  ActionCreatorWithPayload,
   createSlice,
   SliceCaseReducers,
 } from '@reduxjs/toolkit';
@@ -65,16 +65,34 @@ export const listSlice = createSlice<ListState, SliceCaseReducers<ListState>>({
         ({ id }) => id !== itemId
       );
     },
+    addList: (state, action: PayloadAction<string>) => {
+      let listId = generateRandomId();
+
+      while (state.lists.find(({ id }) => id === listId)) {
+        listId = generateRandomId();
+      }
+
+      state.lists.push({
+        id: listId,
+        name: action.payload,
+        items: [],
+      });
+      state.activeList = listId;
+    },
   },
 });
 
 // Selectors
 export const selectActiveList = (state: RootState) => state.list.activeList;
 export const selectLists = (state: RootState) => state.list.lists;
-export const selectListNames = createSelector(selectLists, lists =>
-  lists.map(({ name }) => name)
-);
 
-export const { addItem, removeItem } = listSlice.actions;
+type ListActions = {
+  addItem: ActionCreatorWithPayload<{ listId: string; text: string }>;
+  removeItem: ActionCreatorWithPayload<{ listId: string; itemId: string }>;
+  addList: ActionCreatorWithPayload<string>;
+};
+
+export const { addItem, removeItem, addList }: ListActions =
+  listSlice.actions as ListActions;
 
 export default listSlice.reducer;
