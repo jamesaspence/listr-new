@@ -1,5 +1,12 @@
 .sidebarItem {
+    padding: 8px;
+    margin-bottom: 8px;
+    transition: background-color .2s ease;
+    cursor: pointer;
+}
 
+.sidebarItem:hover {
+    background-color: #3f4b5d;
 }
 
 .selected {

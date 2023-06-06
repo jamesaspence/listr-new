@@ -1,5 +1,9 @@
 .sidebar {
-    padding: 24px 12px;
+    padding: 24px 0;
     background-color: #252836;
-    width: 150px;
+    min-width: 150px;
+}
+
+.divider {
+    margin: 12px;
 }
