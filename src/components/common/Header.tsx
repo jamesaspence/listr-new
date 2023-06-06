@@ -1,4 +1,4 @@
-import packageInfo from '../../package.json';
+import packageInfo from '../../../package.json';
 import styles from './Header.module.css';
 
 export const Header = () => (

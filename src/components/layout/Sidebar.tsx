@@ -4,7 +4,7 @@ import {
   addList,
   selectActiveList,
   selectLists,
-} from '../redux/slices/list.ts';
+} from '../../redux/slices/list.ts';
 import { SidebarItem } from './SidebarItem.tsx';
 import { Button } from '../common/Button.tsx';
 import { useState } from 'react';

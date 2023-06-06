@@ -1,13 +1,15 @@
 import { Header } from './common/Header.tsx';
 import { Button } from './common/Button.tsx';
 import { SidebarLayout } from './layout/SidebarLayout.tsx';
-import { RootState } from './redux/store';
+import { RootState } from '../redux/store.ts';
 import { useDispatch, useSelector } from 'react-redux';
-import { addItem } from './redux/slices/list.ts';
+import { addItem } from '../redux/slices/list.ts';
 
-function App() {
+export const App = () => {
   const dispatch = useDispatch();
-  const activeListId = useSelector((state: RootState) => state.list.activeList);
+  const activeListId = useSelector(
+    (state: RootState) => state.list.activeList
+  ) as string;
 
   return (
     <>
@@ -29,6 +31,6 @@ function App() {
       </SidebarLayout>
     </>
   );
-}
+};
 
 export default App;
