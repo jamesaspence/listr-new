@@ -22,5 +22,18 @@ export const getListById = (listId: string, lists: List[]): Nullable<List> => {
   return lists[index];
 };
 
-export const getListIndex = (listId: string, lists: List[]): Nullable<number> =>
-  lists.findIndex(({ id }) => listId === id) || null;
+export const getListIndex = (
+  listId: string,
+  lists: List[]
+): Nullable<number> => {
+  const index = lists.findIndex(({ id }) => listId === id);
+
+  if (index == null) {
+    return null;
+  }
+
+  return index;
+};
+
+export const listExists = (listId: string, lists: List[]): boolean =>
+  getListById(listId, lists) !== null;
