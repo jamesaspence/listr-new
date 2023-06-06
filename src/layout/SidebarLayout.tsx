@@ -9,7 +9,7 @@ export type SidebarLayoutProps = {
 
 export const SidebarLayout = ({ children }: SidebarLayoutProps) => (
   <section className={styles.sidebarLayout}>
-    <Sidebar>Sidebar</Sidebar>
+    <Sidebar />
     <MainContent>{children}</MainContent>
   </section>
 );

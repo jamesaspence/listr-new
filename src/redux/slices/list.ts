@@ -1,6 +1,11 @@
-import { createSlice, SliceCaseReducers } from '@reduxjs/toolkit';
+import {
+  createSelector,
+  createSlice,
+  SliceCaseReducers,
+} from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { v4 as uuidv4 } from 'uuid';
+import { RootState } from '../store.ts';
 
 export interface ListItem {
   id: string;
@@ -75,6 +80,13 @@ export const listSlice = createSlice<ListState, SliceCaseReducers<ListState>>({
     },
   },
 });
+
+// Selectors
+export const selectActiveList = (state: RootState) => state.list.activeList;
+export const selectLists = (state: RootState) => state.list.lists;
+export const selectListNames = createSelector(selectLists, lists =>
+  Object.values(lists).map(({ name }) => name)
+);
 
 export const { addItem, removeItem } = listSlice.actions;
 
