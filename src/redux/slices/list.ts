@@ -6,7 +6,7 @@ import {
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { v4 as uuidv4 } from 'uuid';
 import { RootState } from '../store.ts';
-import { getListIndex, List } from '../../util/list.ts';
+import { getListIndex, List, listExists } from '../../util/list.ts';
 
 export interface ListState {
   activeList: string | null;
@@ -79,6 +79,15 @@ export const listSlice = createSlice<ListState, SliceCaseReducers<ListState>>({
       });
       state.activeList = listId;
     },
+    setActiveList: (state, action: PayloadAction<string>) => {
+      const listId = action.payload;
+
+      if (!listExists(listId, state.lists)) {
+        return state;
+      }
+
+      state.activeList = listId;
+    },
   },
 });
 
@@ -90,9 +99,10 @@ type ListActions = {
   addItem: ActionCreatorWithPayload<{ listId: string; text: string }>;
   removeItem: ActionCreatorWithPayload<{ listId: string; itemId: string }>;
   addList: ActionCreatorWithPayload<string>;
+  setActiveList: ActionCreatorWithPayload<string>;
 };
 
-export const { addItem, removeItem, addList }: ListActions =
+export const { addItem, removeItem, addList, setActiveList }: ListActions =
   listSlice.actions as ListActions;
 
 export default listSlice.reducer;
