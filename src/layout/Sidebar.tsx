@@ -9,12 +9,12 @@ export const Sidebar = () => {
 
   return (
     <div className={styles.sidebar}>
-      {Object.entries(lists).map(([listId, list]) => (
+      {lists.map(list => (
         <SidebarItem
-          listId={listId}
+          listId={list.id}
           name={list.name}
           onSelect={listId => console.log(`${listId} selected!`)}
-          isActive={activeList === listId}
+          isActive={activeList === list.id}
         />
       ))}
     </div>

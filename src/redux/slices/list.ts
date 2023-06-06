@@ -6,35 +6,18 @@ import {
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { v4 as uuidv4 } from 'uuid';
 import { RootState } from '../store.ts';
-
-export interface ListItem {
-  id: string;
-  text: string;
-  checked: boolean;
-}
-
-export interface List {
-  name: string;
-  items: ListItem[];
-}
+import { getListIndex, List } from '../../util/list.ts';
 
 export interface ListState {
-  activeList: string;
-  lists: { [listId: string]: List };
+  activeList: string | null;
+  lists: List[];
 }
 
 const generateRandomId = uuidv4;
 
-const initialActiveList = generateRandomId();
-
 const initialState: ListState = {
-  activeList: initialActiveList,
-  lists: {
-    [initialActiveList]: {
-      name: 'Unnamed List',
-      items: [],
-    },
-  },
+  activeList: null,
+  lists: [],
 };
 
 export const listSlice = createSlice<ListState, SliceCaseReducers<ListState>>({
@@ -47,18 +30,20 @@ export const listSlice = createSlice<ListState, SliceCaseReducers<ListState>>({
     ) => {
       const { listId, text } = action.payload;
 
-      if (!state.lists[listId]) {
+      const listIndex = getListIndex(listId, state.lists);
+
+      if (listIndex === null) {
         return state;
       }
 
-      const list = state.lists[listId];
+      const list = state.lists[listIndex];
       let id = generateRandomId();
 
       while (list.items.find(({ id: itemId }) => itemId === id)) {
         id = generateRandomId();
       }
 
-      state.lists[listId].items.push({
+      state.lists[listIndex].items.push({
         id,
         text,
         checked: false,
@@ -70,11 +55,13 @@ export const listSlice = createSlice<ListState, SliceCaseReducers<ListState>>({
     ) => {
       const { listId, itemId } = action.payload;
 
-      if (!state.lists[listId]) {
+      const listIndex = getListIndex(listId, state.lists);
+
+      if (listIndex === null) {
         return state;
       }
 
-      state.lists[listId].items = state.lists[listId].items.filter(
+      state.lists[listIndex].items = state.lists[listIndex].items.filter(
         ({ id }) => id !== itemId
       );
     },
@@ -85,7 +72,7 @@ export const listSlice = createSlice<ListState, SliceCaseReducers<ListState>>({
 export const selectActiveList = (state: RootState) => state.list.activeList;
 export const selectLists = (state: RootState) => state.list.lists;
 export const selectListNames = createSelector(selectLists, lists =>
-  Object.values(lists).map(({ name }) => name)
+  lists.map(({ name }) => name)
 );
 
 export const { addItem, removeItem } = listSlice.actions;
