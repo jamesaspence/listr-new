@@ -1,0 +1,12 @@
+.listNameWrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.pencil {
+    display: inline-block;
+    margin-left:0;
+    width: 64px;
+    height: 64px;
+    border: 1px solid red;
+}
