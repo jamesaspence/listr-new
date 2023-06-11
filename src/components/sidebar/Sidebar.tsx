@@ -1,7 +1,7 @@
 import styles from './Sidebar.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import {
-  selectActiveList,
+  selectActiveListId,
   selectLists,
   setActiveList,
 } from '../../redux/slices/list.ts';
@@ -9,7 +9,7 @@ import { SidebarItem } from './SidebarItem.tsx';
 import { NewListInput } from './NewListInput.tsx';
 
 export const Sidebar = () => {
-  const activeList = useSelector(selectActiveList);
+  const activeList = useSelector(selectActiveListId);
   const lists = useSelector(selectLists);
   const dispatch = useDispatch();
 
@@ -24,7 +24,7 @@ export const Sidebar = () => {
           isActive={activeList === list.id}
         />
       ))}
-      <hr className={styles.divider} />
+      {lists.length > 0 && <hr className={styles.divider} />}
       <NewListInput />
     </div>
   );

@@ -1,0 +1,23 @@
+import { useDispatch, useSelector } from 'react-redux';
+import { addItem, selectActiveList } from '../../redux/slices/list.ts';
+import { List } from '../../util/list.ts';
+import { AddNewItemInput } from './AddNewItemInput.tsx';
+
+export const ActiveListContainer = () => {
+  const activeList = useSelector(selectActiveList) as List;
+  const dispatch = useDispatch();
+
+  return (
+    <div>
+      <h2>{activeList.name}</h2>
+      <ul>
+        {activeList.items.map(item => (
+          <li key={item.id}>{item.text}</li>
+        ))}
+        <AddNewItemInput
+          onSubmit={text => dispatch(addItem({ listId: activeList.id, text }))}
+        />
+      </ul>
+    </div>
+  );
+};
