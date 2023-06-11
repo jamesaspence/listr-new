@@ -3,10 +3,9 @@
     width: 24px;
     height: 24px;
     stroke: #dedede;
-}
-
-.circle {
-    stroke-width: 1px;
+    border: 1px solid #dedede;
+    border-radius: 50%;
+    box-sizing: border-box;
 }
 
 .plusLine {
