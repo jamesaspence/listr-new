@@ -1,5 +1,6 @@
 import {
   ActionCreatorWithPayload,
+  createSelector,
   createSlice,
   SliceCaseReducers,
 } from '@reduxjs/toolkit';
@@ -7,6 +8,7 @@ import type { PayloadAction } from '@reduxjs/toolkit';
 import { v4 as uuidv4 } from 'uuid';
 import { RootState } from '../store.ts';
 import { getListIndex, List, listExists } from '../../util/list.ts';
+import { Nullable } from '../../types';
 
 export interface ListState {
   activeList: string | null;
@@ -92,8 +94,28 @@ export const listSlice = createSlice<ListState, SliceCaseReducers<ListState>>({
 });
 
 // Selectors
-export const selectActiveList = (state: RootState) => state.list.activeList;
+
+export const selectActiveListId = (state: RootState): Nullable<string> =>
+  state.list.activeList;
+
 export const selectLists = (state: RootState) => state.list.lists;
+
+export const selectActiveList = createSelector(
+  [selectActiveListId, selectLists],
+  (activeListId, lists) => {
+    if (activeListId === null) {
+      return null;
+    }
+
+    const activeList = lists.find(list => list.id === activeListId);
+
+    if (activeList == null) {
+      return null;
+    }
+
+    return activeList;
+  }
+);
 
 type ListActions = {
   addItem: ActionCreatorWithPayload<{ listId: string; text: string }>;
