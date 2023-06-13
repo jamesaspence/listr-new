@@ -8,15 +8,46 @@ import { List } from '../../util/list.ts';
 import { AddNewItemInput } from './AddNewItemInput.tsx';
 import { EditPencil } from '../svg/EditPencil.tsx';
 import styles from './ActiveListContainer.module.css';
+import { useEffect, useRef, useState } from 'react';
+import * as classNames from 'classnames';
+import { Nullable } from '../../types';
 
 export const ActiveListContainer = () => {
   const activeList = useSelector(selectActiveList) as List;
   const dispatch = useDispatch();
 
+  const ref = useRef<Nullable<HTMLInputElement>>(null);
+
+  const [name, setName] = useState(activeList.name);
+  const [isEditing, setIsEditing] = useState(false);
+
+  const listener = (event: MouseEvent) => {
+    if (ref.current && ref.current.contains(event.target as Node)) {
+      console.log('Hello there');
+    }
+  };
+  useEffect(() => {
+    // document.addEventListener()
+  }, []);
+
   return (
     <div>
       <div className={styles.listNameWrapper}>
-        <h2>{activeList.name}</h2>
+        <input
+          className={classNames(styles.nameInput, {
+            [styles.editing]: isEditing,
+          })}
+          value={name}
+          placeholder="List name"
+          onChange={e => setName(e.target.value)}
+          onClick={() => {
+            if (!isEditing) {
+              console.log('isEditing being enabled!');
+              setIsEditing(true);
+            }
+          }}
+          ref={ref}
+        />
         <EditPencil className={styles.pencil} />
       </div>
       <ul>
