@@ -6,8 +6,7 @@ import {
 } from '../../redux/slices/list.ts';
 import { List } from '../../util/list.ts';
 import { AddNewItemInput } from './AddNewItemInput.tsx';
-import { EditPencil } from '../svg/EditPencil.tsx';
-import styles from './ActiveListContainer.module.css';
+import { ListNameHeader } from './name/ListNameHeader';
 
 export const ActiveListContainer = () => {
   const activeList = useSelector(selectActiveList) as List;
@@ -15,9 +14,8 @@ export const ActiveListContainer = () => {
 
   return (
     <div>
-      <div className={styles.listNameWrapper}>
-        <h2>{activeList.name}</h2>
-        <EditPencil className={styles.pencil} />
+      <div>
+        <ListNameHeader listId={activeList.id} name={activeList.name} />
       </div>
       <ul>
         {activeList.items.map(item => (
