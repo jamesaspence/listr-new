@@ -3,6 +3,20 @@
     flex-direction: row;
 }
 
+.nameInput {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    font-size: 24px;
+    color: #fff;
+    font-weight: bold;
+    cursor: default;
+}
+
+.nameInput.editing {
+    cursor: text;
+}
+
 .pencil {
     display: inline-block;
     margin-left:0;

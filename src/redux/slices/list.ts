@@ -51,6 +51,20 @@ export const listSlice = createSlice<ListState, SliceCaseReducers<ListState>>({
         checked: false,
       });
     },
+    updateListName: (
+      state,
+      action: PayloadAction<{ listId: string; name: string }>
+    ) => {
+      const { listId, name } = action.payload;
+
+      const listIndex = getListIndex(listId, state.lists);
+
+      if (listIndex === null) {
+        return state;
+      }
+
+      state.lists[listIndex].name = name;
+    },
     removeItem: (
       state,
       action: PayloadAction<{ listId: string; itemId: string }>
