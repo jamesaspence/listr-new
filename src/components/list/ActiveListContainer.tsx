@@ -12,20 +12,6 @@ export const ActiveListContainer = () => {
   const activeList = useSelector(selectActiveList) as List;
   const dispatch = useDispatch();
 
-  const ref = useRef<Nullable<HTMLInputElement>>(null);
-
-  const [name, setName] = useState(activeList.name);
-  const [isEditing, setIsEditing] = useState(false);
-
-  const listener = (event: MouseEvent) => {
-    if (ref.current && ref.current.contains(event.target as Node)) {
-      console.log('Hello there');
-    }
-  };
-  useEffect(() => {
-    // document.addEventListener()
-  }, []);
-
   return (
     <div>
       <div>
