@@ -7,7 +7,8 @@ export type AddNewItemInputProps = {
 export const AddNewItemInput = ({ onSubmit }: AddNewItemInputProps) => {
   const [text, setText] = useState('');
 
-  const onFormSubmit = () => {
+  const onFormSubmit = event => {
+    event.preventDefault();
     onSubmit(text);
     setText('');
   };
