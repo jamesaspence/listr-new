@@ -14,9 +14,7 @@ export const ActiveListContainer = () => {
 
   return (
     <div>
-      <div>
-        <ListNameHeader listId={activeList.id} name={activeList.name} />
-      </div>
+      <ListNameHeader listId={activeList.id} name={activeList.name} />
       <ul>
         {activeList.items.map(item => (
           <li
