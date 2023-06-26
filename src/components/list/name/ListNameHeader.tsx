@@ -18,8 +18,9 @@ export const ListNameHeader = ({ listId, name }: ListNameHeaderProps) => {
 
   useEffect(() => {
     if (isEditing && editingRef.current !== null) {
-      editingRef.current?.focus();
-      editingRef.current?.select();
+      const node = editingRef.current as HTMLInputElement;
+      node.focus();
+      node.select();
     }
   }, [isEditing]);
 
