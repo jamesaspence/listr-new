@@ -13,6 +13,7 @@ import { Nullable } from '../../types';
 export interface ListState {
   activeList: string | null;
   lists: List[];
+  itemIds: string[];
 }
 
 const generateRandomId = uuidv4;
@@ -20,6 +21,7 @@ const generateRandomId = uuidv4;
 const initialState: ListState = {
   activeList: null,
   lists: [],
+  itemIds: [],
 };
 
 export const listSlice = createSlice<ListState, SliceCaseReducers<ListState>>({
@@ -38,10 +40,9 @@ export const listSlice = createSlice<ListState, SliceCaseReducers<ListState>>({
         return state;
       }
 
-      const list = state.lists[listIndex];
       let id = generateRandomId();
 
-      while (list.items.find(({ id: itemId }) => itemId === id)) {
+      while (state.itemIds.includes(id)) {
         id = generateRandomId();
       }
 
@@ -50,6 +51,7 @@ export const listSlice = createSlice<ListState, SliceCaseReducers<ListState>>({
         text,
         checked: false,
       });
+      state.itemIds.push(id);
     },
     updateListName: (
       state,
