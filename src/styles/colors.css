@@ -1,0 +1,14 @@
+:root {
+    --black: #1c1b1b;
+    --dark-blue: #252836;
+    --blue-gray: #3f4b5d;
+    --white: #fff;
+    --off-white: #dedede;
+
+    --bg-color-dark: var(--black);
+    --bg-color-light: var(--dark-blue);
+    --bg-color-light-hover: var(--blue-gray);
+
+    --text-white: var(--off-white);
+    --text-black: var(--black);
+}

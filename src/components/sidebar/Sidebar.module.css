@@ -1,6 +1,6 @@
 .sidebar {
     padding: 24px 0;
-    background-color: #252836;
+    background-color: var(--bg-color-light);
     min-width: 150px;
 }
 

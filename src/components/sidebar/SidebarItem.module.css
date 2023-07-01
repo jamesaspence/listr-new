@@ -7,7 +7,7 @@
 }
 
 .sidebarItem:hover {
-    background-color: #3f4b5d;
+    background-color: var(--bg-color-light-hover);
 }
 
 .selected {

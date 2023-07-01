@@ -2,8 +2,8 @@
     fill: none;
     width: 24px;
     height: 24px;
-    stroke: #dedede;
-    border: 1px solid #dedede;
+    stroke: var(--off-white);
+    border: 1px solid var(--off-white);
     border-radius: 50%;
     box-sizing: border-box;
 }
