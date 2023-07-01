@@ -1,4 +1,4 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { configureStore, ConfigureStoreOptions } from '@reduxjs/toolkit';
 import listSliceReducer from './slices/list';
 import { getDataFromStorage } from '../util/localStorage.ts';
 import { localStorageSubscriber } from './subscribers/localStorage.ts';
@@ -18,7 +18,7 @@ export const store = configureStore({
         }
       : undefined,
   devTools: devToolEnvironments.includes(import.meta.env.VITE_APP_ENV),
-});
+} as ConfigureStoreOptions);
 
 const schemaVersion = '1.0.0';
 store.subscribe(localStorageSubscriber(store, schemaVersion));
