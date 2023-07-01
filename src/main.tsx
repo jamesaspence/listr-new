@@ -1,5 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom/client';
 import { App } from './components/App.tsx';
 import './index.css';
 import { store } from './redux/store.ts';
