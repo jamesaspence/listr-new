@@ -26,10 +26,10 @@ export const ActiveListContainer = () => {
             {item.text}
           </li>
         ))}
-        <AddNewItemInput
-          onSubmit={text => dispatch(addItem({ listId: activeList.id, text }))}
-        />
       </ul>
+      <AddNewItemInput
+        onSubmit={text => dispatch(addItem({ listId: activeList.id, text }))}
+      />
     </div>
   );
 };

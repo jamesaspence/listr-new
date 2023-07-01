@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import styles from './AddNewItemInput.module.css';
+import { Button } from '../common/Button';
 
 export type AddNewItemInputProps = {
   onSubmit: (text: string) => void;
@@ -14,8 +16,15 @@ export const AddNewItemInput = ({ onSubmit }: AddNewItemInputProps) => {
   };
 
   return (
-    <form onSubmit={onFormSubmit}>
-      <input type="text" onChange={e => setText(e.target.value)} />
+    <form className={styles.wrapper} onSubmit={onFormSubmit}>
+      <input
+        className={styles.input}
+        type="text"
+        onChange={e => setText(e.target.value)}
+        placeholder="Add new item"
+        value={text}
+      />
+      <Button type="submit">Submit</Button>
     </form>
   );
 };
