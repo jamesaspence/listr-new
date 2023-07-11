@@ -3,6 +3,7 @@ import {
   addItem,
   removeItem,
   selectActiveList,
+  toggleItem,
 } from '../../redux/slices/list.ts';
 import { List } from '../../util/list.ts';
 import { AddNewItemInput } from './AddNewItemInput.tsx';
@@ -17,13 +18,23 @@ export const ActiveListContainer = () => {
       <ListNameHeader listId={activeList.id} name={activeList.name} />
       <ul>
         {activeList.items.map(item => (
-          <li
-            onClick={() =>
-              dispatch(removeItem({ listId: activeList.id, itemId: item.id }))
-            }
-            key={item.id}
-          >
+          <li key={item.id}>
             {item.text}
+            <input
+              type="checkbox"
+              checked={item.checked}
+              onChange={() =>
+                dispatch(toggleItem({ listId: activeList.id, itemId: item.id }))
+              }
+            />
+            <button
+              type="button"
+              onClick={() =>
+                dispatch(removeItem({ listId: activeList.id, itemId: item.id }))
+              }
+            >
+              Remove
+            </button>
           </li>
         ))}
       </ul>

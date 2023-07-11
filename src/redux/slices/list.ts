@@ -120,6 +120,29 @@ export const listSlice = createSlice<ListState, SliceCaseReducers<ListState>>({
 
       state.activeList = listId;
     },
+    toggleItem: (
+      state,
+      action: PayloadAction<{ listId: string; itemId: string }>
+    ) => {
+      const { listId, itemId } = action.payload;
+
+      const listIndex = getListIndex(listId, state.lists);
+
+      if (listIndex === null) {
+        return state;
+      }
+
+      const itemIndex = state.lists[listIndex].items.findIndex(
+        ({ id }) => id === itemId
+      );
+
+      if (itemIndex == null) {
+        return state;
+      }
+
+      state.lists[listIndex].items[itemIndex].checked =
+        !state.lists[listIndex].items[itemIndex].checked;
+    },
   },
 });
 
@@ -153,6 +176,7 @@ type ListActions = {
   addList: ActionCreatorWithPayload<string>;
   setActiveList: ActionCreatorWithPayload<string>;
   renameList: ActionCreatorWithPayload<{ listId: string; name: string }>;
+  toggleItem: ActionCreatorWithPayload<{ listId: string; itemId: string }>;
 };
 
 export const {
@@ -161,6 +185,7 @@ export const {
   addList,
   setActiveList,
   renameList,
+  toggleItem,
 }: ListActions = listSlice.actions as ListActions;
 
 export default listSlice.reducer;
