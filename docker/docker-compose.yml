@@ -1,0 +1,7 @@
+services:
+  listr:
+    build:
+      context: ../
+      dockerfile: ./docker/Dockerfile
+    ports:
+      - ${NGINX_PORT:-3000}:80
