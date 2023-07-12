@@ -1,5 +1,5 @@
 import styles from './PlusSvg.module.css';
-import * as classNames from 'classnames';
+import classNames from 'classnames';
 import { CommonSvgProps } from './util.ts';
 
 export type PlusSvgProps = CommonSvgProps;
