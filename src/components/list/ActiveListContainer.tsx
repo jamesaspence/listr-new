@@ -8,6 +8,7 @@ import {
 import { List } from '../../util/list.ts';
 import { AddNewItemInput } from './AddNewItemInput.tsx';
 import { ListNameHeader } from './name/ListNameHeader';
+import { ToggleableItem } from './item/ToggleableItem';
 
 export const ActiveListContainer = () => {
   const activeList = useSelector(selectActiveList) as List;
@@ -18,24 +19,16 @@ export const ActiveListContainer = () => {
       <ListNameHeader listId={activeList.id} name={activeList.name} />
       <ul>
         {activeList.items.map(item => (
-          <li key={item.id}>
-            {item.text}
-            <input
-              type="checkbox"
-              checked={item.checked}
-              onChange={() =>
-                dispatch(toggleItem({ listId: activeList.id, itemId: item.id }))
-              }
-            />
-            <button
-              type="button"
-              onClick={() =>
-                dispatch(removeItem({ listId: activeList.id, itemId: item.id }))
-              }
-            >
-              Remove
-            </button>
-          </li>
+          <ToggleableItem
+            key={item.id}
+            onToggle={item =>
+              dispatch(toggleItem({ listId: activeList.id, itemId: item.id }))
+            }
+            onRemove={item =>
+              dispatch(removeItem({ listId: activeList.id, itemId: item.id }))
+            }
+            item={item}
+          />
         ))}
       </ul>
       <AddNewItemInput
