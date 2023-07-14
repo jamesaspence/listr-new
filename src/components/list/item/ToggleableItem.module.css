@@ -1,0 +1,19 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    margin: 12px 0;
+}
+
+.checkbox {
+    margin-right: 12px;
+}
+
+.text {
+    margin: 0 12px;
+    display: inline-block;
+}
+
+.removeButton {
+    margin-right: 0;
+    margin-left: auto;
+}

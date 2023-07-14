@@ -1,4 +1,6 @@
 import { ListItem } from '../../../util/list';
+import styles from './ToggleableItem.module.css';
+import { Button } from '../../common/Button';
 
 type ToggleableItemProps = {
   onToggle: (item: ListItem) => void;
@@ -11,15 +13,20 @@ export const ToggleableItem = ({
   onRemove,
   item,
 }: ToggleableItemProps) => (
-  <li>
-    {item.text}
+  <div className={styles.wrapper}>
     <input
+      className={styles.checkbox}
       type="checkbox"
       checked={item.checked}
       onChange={() => onToggle(item)}
     />
-    <button type="button" onClick={() => onRemove(item)}>
+    <span className={styles.text}>{item.text}</span>
+    <Button
+      className={styles.removeButton}
+      type="button"
+      onClick={() => onRemove(item)}
+    >
       Remove
-    </button>
-  </li>
+    </Button>
+  </div>
 );

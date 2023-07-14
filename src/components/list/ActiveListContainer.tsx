@@ -17,7 +17,7 @@ export const ActiveListContainer = () => {
   return (
     <div>
       <ListNameHeader listId={activeList.id} name={activeList.name} />
-      <ul>
+      <div>
         {activeList.items.map(item => (
           <ToggleableItem
             key={item.id}
@@ -30,7 +30,7 @@ export const ActiveListContainer = () => {
             item={item}
           />
         ))}
-      </ul>
+      </div>
       <AddNewItemInput
         onSubmit={text => dispatch(addItem({ listId: activeList.id, text }))}
       />
