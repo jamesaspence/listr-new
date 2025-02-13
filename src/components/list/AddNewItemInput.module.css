@@ -1,0 +1,22 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.input {
+    outline: none;
+    border: none;
+    padding: 12px;
+    display: block;
+    flex: 1;
+    border-radius: 8px;
+    margin-right: 12px;
+    color: var(--text-white);
+    background-color: var(--bg-color-light);
+}
+
+@media (min-width: 640px) {
+    .wrapper {
+        flex-direction: row;
+    }
+}
