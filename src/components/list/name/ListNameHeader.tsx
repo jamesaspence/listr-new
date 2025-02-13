@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { FormEvent, useEffect, useRef, useState } from 'react';
 import styles from './ListNameHeader.module.css';
 import { Button } from '../../common/Button';
 import { Nullable } from '../../../types';
@@ -24,10 +24,10 @@ export const ListNameHeader = ({ listId, name }: ListNameHeaderProps) => {
     }
   }, [isEditing]);
 
-  const onSubmit = async event => {
+  const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    await dispatch(
+    dispatch(
       renameList({
         listId,
         name: value,
