@@ -24,6 +24,12 @@
     display: block;
     margin: 12px 0;
     padding: 0 2px 4px;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom-color .25s ease;
+}
+
+.header:hover {
+    border-bottom-color: #777;
 }
 
 .button {
