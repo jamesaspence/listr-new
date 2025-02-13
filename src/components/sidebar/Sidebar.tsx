@@ -15,6 +15,8 @@ export const Sidebar = () => {
 
   return (
     <div className={styles.sidebar}>
+      <NewListInput />
+      {lists.length > 0 && <hr className={styles.divider} />}
       {lists.map(list => (
         <SidebarItem
           listId={list.id}
@@ -24,8 +26,17 @@ export const Sidebar = () => {
           isActive={activeList === list.id}
         />
       ))}
-      {lists.length > 0 && <hr className={styles.divider} />}
-      <NewListInput />
+      <small className={styles.logoDisclaimer}>
+        Uicons by{' '}
+        <a
+          className={styles.logoDisclaimerLink}
+          href="https://www.flaticon.com/uicons"
+          target="_blank"
+          referrerPolicy="no-referrer"
+        >
+          Flaticon
+        </a>
+      </small>
     </div>
   );
 };

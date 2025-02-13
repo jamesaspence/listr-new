@@ -2,8 +2,22 @@
     padding: 24px 0;
     background-color: var(--bg-color-light);
     min-width: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
 }
 
 .divider {
-    margin: 12px;
+    margin: 24px 12px;
+}
+
+.logoDisclaimer {
+    margin: auto 12px 0;
+    font-style: italic;
+    display: inline-block;
+    align-self: center;
+}
+
+.logoDisclaimerLink {
+    color: var(--off-white);
 }
