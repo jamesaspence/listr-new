@@ -1,6 +1,6 @@
 .sidebar {
     padding: 24px 0;
-    background-color: var(--bg-color-secondary);
+    background-color: var(--bg-color-sidebar);
     min-width: 150px;
     display: flex;
     flex-direction: column;
@@ -19,5 +19,5 @@
 }
 
 .logoDisclaimerLink {
-    color: var(--text-primary);
+    color: var(--text-color-primary);
 }

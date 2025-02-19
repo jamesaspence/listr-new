@@ -2,8 +2,8 @@
     fill: none;
     width: 24px;
     height: 24px;
-    stroke: var(--text-primary);
-    border: 1px solid var(--text-primary);
+    stroke: var(--text-color-primary);
+    border: 1px solid var(--text-color-primary);
     border-radius: 50%;
     box-sizing: border-box;
 }
