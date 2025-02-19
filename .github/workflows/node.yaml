@@ -19,7 +19,7 @@ jobs:
         with:
           node-version: 22.13.1
           cache: 'yarn'
-      - run: yarn --frozen-lockfile
+      - run: yarn --immutable
       # TODO re-enable once we add tests - run: yarn test
   deploy:
     if: github.ref == 'refs/heads/main'
@@ -45,7 +45,7 @@ jobs:
         with:
           node-version: 22.13.1
           cache: 'yarn'
-      - run: yarn --frozen-lockfile
+      - run: yarn --immutable
       - run: yarn build
       - name: Setup Pages
         uses: actions/configure-pages@v5
