@@ -5,10 +5,13 @@
     --white: #fff;
     --off-white: #dedede;
 
-    --bg-color-dark: var(--black);
-    --bg-color-light: var(--dark-blue);
-    --bg-color-light-hover: var(--blue-gray);
-
     --text-white: var(--off-white);
     --text-black: var(--black);
+
+    /* Theme colors */
+    --bg-color-primary: var(--black);
+    --bg-color-secondary: var(--dark-blue);
+    --bg-color-secondary-hover: var(--blue-gray);
+    --text-primary: var(--off-white);
+    --border-primary: #777;
 }

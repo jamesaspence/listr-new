@@ -1,7 +1,7 @@
 .header {
     display: flex;
     flex-direction: row;
-    background-color: var(--bg-color-light);
+    background-color: var(--bg-color-secondary);
     padding: 24px;
     align-items: center;
 }
@@ -24,5 +24,5 @@
 
 .headerVersion {
     display: block;
-    color: #aaa;
+    color: var(--text-primary);
 }

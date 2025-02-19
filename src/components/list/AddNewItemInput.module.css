@@ -11,8 +11,8 @@
     flex: 1;
     border-radius: 8px;
     margin-right: 12px;
-    color: var(--text-white);
-    background-color: var(--bg-color-light);
+    color: var(--text-primary);
+    background-color: var(--bg-color-secondary);
 }
 
 @media (min-width: 640px) {

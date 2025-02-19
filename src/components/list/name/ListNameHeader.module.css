@@ -13,9 +13,9 @@
     font-size: 24px;
     outline: none;
     border: none;
-    border-bottom: 1px solid #777;
+    border-bottom: 1px solid var(--border-primary);
     background: transparent;
-    color: #fff;
+    color: var(--text-primary);
     font-weight: bold;
     min-width: 400px;
 }
@@ -29,7 +29,7 @@
 }
 
 .header:hover {
-    border-bottom-color: #777;
+    border-bottom-color: var(--border-primary);
 }
 
 .button {
