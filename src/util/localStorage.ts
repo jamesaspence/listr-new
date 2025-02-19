@@ -1,7 +1,9 @@
 import { Nullable } from '../types';
 import { ListState } from '../redux/slices/list.ts';
+import { ThemeName } from '../redux/slices/theme.ts';
 
 export const LISTS_STORAGE_KEY = 'listr__state--list';
+export const THEME_STORAGE_KEY = 'listr__theme';
 
 type SerializedState = {
   list: ListState;
@@ -25,6 +27,10 @@ export const getDataFromStorage = (): Nullable<ListState> => {
   return list;
 };
 
+export const getThemeFromStorage = (): Nullable<ThemeName> => {
+  return getLocalStorage().getItem(THEME_STORAGE_KEY) as Nullable<ThemeName>;
+};
+
 export const hasStoredData = (): boolean => {
   return getRawData() != null;
 };
@@ -42,6 +48,11 @@ export const writeDataToStorage = (
   );
 };
 
+export const writeThemeToStorage = (theme: ThemeName) => {
+  getLocalStorage().setItem(THEME_STORAGE_KEY, theme);
+};
+
 export const clearData = () => {
   getLocalStorage().removeItem(LISTS_STORAGE_KEY);
+  getLocalStorage().removeItem(THEME_STORAGE_KEY);
 };

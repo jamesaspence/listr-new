@@ -7,7 +7,7 @@ html, body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
     background-color: var(--bg-color-primary);
-    color: var(--text-white);
+    color: var(--text-color-primary);
 }
 
 #root {

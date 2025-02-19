@@ -1,6 +1,9 @@
 import { Store } from '@reduxjs/toolkit';
 import { RootState } from '../store.ts';
-import { writeDataToStorage } from '../../util/localStorage.ts';
+import {
+  writeDataToStorage,
+  writeThemeToStorage,
+} from '../../util/localStorage.ts';
 
 export const localStorageSubscriber = (
   store: Store<RootState>,
@@ -8,6 +11,8 @@ export const localStorageSubscriber = (
 ) => {
   return () => {
     const listState = store.getState().list;
+    const themeState = store.getState().theme;
     writeDataToStorage(listState, schemaVersion);
+    writeThemeToStorage(themeState.currentTheme);
   };
 };

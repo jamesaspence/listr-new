@@ -1,22 +1,32 @@
 import { configureStore, ConfigureStoreOptions } from '@reduxjs/toolkit';
 import listSliceReducer from './slices/list';
-import { getDataFromStorage } from '../util/localStorage.ts';
+import themeSliceReducer from './slices/theme.ts';
+import {
+  getDataFromStorage,
+  getThemeFromStorage,
+} from '../util/localStorage.ts';
 import { localStorageSubscriber } from './subscribers/localStorage.ts';
 
 const devToolEnvironments = ['local', 'test', 'staging'];
 
 const listData = getDataFromStorage();
+const currentTheme = getThemeFromStorage();
 
 export const store = configureStore({
   reducer: {
     list: listSliceReducer,
+    theme: themeSliceReducer,
   },
-  preloadedState:
-    listData !== null
+  preloadedState: {
+    theme: {
+      currentTheme: currentTheme || 'dark',
+    },
+    ...(listData !== null
       ? {
           list: listData,
         }
-      : undefined,
+      : {}),
+  },
   devTools: devToolEnvironments.includes(import.meta.env.VITE_APP_ENV),
 } as ConfigureStoreOptions);
 

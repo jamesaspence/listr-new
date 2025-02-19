@@ -11,11 +11,11 @@
     padding: 8px;
     border-radius: 4px;
     font-size: 16px;
-    border: 1px solid var(--border-primary);
+    border: 1px solid var(--border-color-primary);
     transition: opacity .25s ease;
     background-color: transparent;
     opacity: 0.7;
-    color: var(--text-primary);
+    color: var(--text-color-primary);
 }
 
 .input:focus {
