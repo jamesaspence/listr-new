@@ -1,13 +1,23 @@
-import { Dispatch, SetStateAction, useEffect, useState } from 'react';
+import { useEffect } from 'react';
+import {
+  changeTheme,
+  selectCurrentTheme,
+  ThemeName,
+} from '../redux/slices/theme.ts';
+import { useDispatch, useSelector } from 'react-redux';
 
-export type ThemeName = 'dark' | 'light';
+export type UseThemeReturn = [ThemeName, (newTheme: ThemeName) => void];
 
-export type UseThemeReturn = [ThemeName, Dispatch<SetStateAction<ThemeName>>];
+export const useTheme: () => UseThemeReturn = () => {
+  const theme = useSelector(selectCurrentTheme);
+  const dispatch = useDispatch();
 
-export const useTheme: (initialState?: ThemeName) => UseThemeReturn = (
-  initialState = 'dark'
-) => {
-  const [theme, setTheme] = useState<ThemeName>(initialState);
+  const setTheme = (newTheme: ThemeName) =>
+    dispatch(
+      changeTheme({
+        theme: newTheme,
+      })
+    );
 
   useEffect(() => {
     document.documentElement.className = `${theme}-theme`;
