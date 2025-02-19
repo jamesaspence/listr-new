@@ -3,9 +3,12 @@ import { SidebarLayout } from './layout/SidebarLayout.tsx';
 import { useSelector } from 'react-redux';
 import { selectLists } from '../redux/slices/list.ts';
 import { ActiveListContainer } from './list/ActiveListContainer.tsx';
+import { Button } from './common/Button.tsx';
+import { useTheme } from '../hooks/useTheme.ts';
 
 export const App = () => {
   const lists = useSelector(selectLists);
+  const [theme, setTheme] = useTheme();
 
   return (
     <>
@@ -22,11 +25,18 @@ export const App = () => {
             </p>
           </>
         ) : (
-          <ActiveListContainer />
+          <>
+            <ActiveListContainer />
+            <Button
+              onClick={() => {
+                setTheme(theme === 'dark' ? 'light' : 'dark');
+              }}
+            >
+              Toggle Theme
+            </Button>
+          </>
         )}
       </SidebarLayout>
     </>
   );
 };
-
-export default App;
