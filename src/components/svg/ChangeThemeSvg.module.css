@@ -1,0 +1,5 @@
+.svg {
+    fill: var(--text-color-primary);
+    box-sizing: border-box;
+    width: 24px;
+}

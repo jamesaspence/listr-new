@@ -23,6 +23,9 @@
 
     --button-color-primary: var(--green);
     --button-text-color-primary: var(--white);
+
+    --change-theme-button-color: var(--off-white);
+    --change-theme-button-color-hover: var(--white);
 }
 
 html.light-theme {
@@ -32,4 +35,7 @@ html.light-theme {
     --text-color-primary: var(--dark-blue);
     --text-color-secondary: var(--dark-blue);
     --border-color-primary: var(--blue-gray);
+
+    --change-theme-button-color: var(--dark-blue);
+    --change-theme-button-color-hover: var(--blue-gray);
 }
