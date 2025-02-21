@@ -1,6 +1,7 @@
 import styles from './Sidebar.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import {
+  deleteList,
   selectActiveListId,
   selectLists,
   setActiveList,
@@ -23,6 +24,7 @@ export const Sidebar = () => {
           key={list.id}
           name={list.name}
           onSelect={listId => dispatch(setActiveList(listId))}
+          onDelete={listId => dispatch(deleteList(listId))}
           isActive={activeList === list.id}
         />
       ))}
