@@ -123,8 +123,16 @@ export const listSlice = createSlice<ListState, SliceCaseReducers<ListState>>({
         return state;
       }
 
+      const listIndex = getListIndex(listId, state.lists) as number;
+      let newActiveListIndex: number;
+      if (listIndex > 0) {
+        newActiveListIndex = listIndex - 1;
+      } else {
+        newActiveListIndex = 1;
+      }
+
       if (state.activeList === listId) {
-        state.activeList = state.lists[0]?.id || null;
+        state.activeList = state.lists[newActiveListIndex]?.id || null;
       }
       state.lists = state.lists.filter(({ id }) => id !== listId);
     },
