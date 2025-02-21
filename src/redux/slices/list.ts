@@ -7,7 +7,12 @@ import {
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { v4 as uuidv4 } from 'uuid';
 import { RootState } from '../store.ts';
-import { getListIndex, List, listExists } from '../../util/list.ts';
+import {
+  getListById,
+  getListIndex,
+  List,
+  listExists,
+} from '../../util/list.ts';
 import { Nullable } from '../../types';
 
 export interface ListState {
@@ -111,13 +116,16 @@ export const listSlice = createSlice<ListState, SliceCaseReducers<ListState>>({
 
       state.lists[listIndex].name = name;
     },
-    deleteList: (state, action: PayloadAction<{ listId: string }>) => {
-      const { listId } = action.payload;
+    deleteList: (state, action: PayloadAction<string>) => {
+      const listId = action.payload;
 
       if (!listExists(listId, state.lists)) {
         return state;
       }
 
+      if (state.activeList === listId) {
+        state.activeList = state.lists[0]?.id || null;
+      }
       state.lists = state.lists.filter(({ id }) => id !== listId);
     },
     setActiveList: (state, action: PayloadAction<string>) => {
@@ -169,7 +177,7 @@ export const selectActiveList = createSelector(
       return null;
     }
 
-    const activeList = lists.find(list => list.id === activeListId);
+    const activeList = getListById(activeListId, lists);
 
     if (activeList == null) {
       return null;
@@ -185,7 +193,7 @@ type ListActions = {
   addList: ActionCreatorWithPayload<string>;
   setActiveList: ActionCreatorWithPayload<string>;
   renameList: ActionCreatorWithPayload<{ listId: string; name: string }>;
-  deleteList: ActionCreatorWithPayload<{ listId: string }>;
+  deleteList: ActionCreatorWithPayload<string>;
   toggleItem: ActionCreatorWithPayload<{ listId: string; itemId: string }>;
 };
 
