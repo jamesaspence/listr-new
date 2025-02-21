@@ -111,6 +111,15 @@ export const listSlice = createSlice<ListState, SliceCaseReducers<ListState>>({
 
       state.lists[listIndex].name = name;
     },
+    deleteList: (state, action: PayloadAction<{ listId: string }>) => {
+      const { listId } = action.payload;
+
+      if (!listExists(listId, state.lists)) {
+        return state;
+      }
+
+      state.lists = state.lists.filter(({ id }) => id !== listId);
+    },
     setActiveList: (state, action: PayloadAction<string>) => {
       const listId = action.payload;
 
@@ -176,6 +185,7 @@ type ListActions = {
   addList: ActionCreatorWithPayload<string>;
   setActiveList: ActionCreatorWithPayload<string>;
   renameList: ActionCreatorWithPayload<{ listId: string; name: string }>;
+  deleteList: ActionCreatorWithPayload<{ listId: string }>;
   toggleItem: ActionCreatorWithPayload<{ listId: string; itemId: string }>;
 };
 
@@ -185,6 +195,7 @@ export const {
   addList,
   setActiveList,
   renameList,
+  deleteList,
   toggleItem,
 }: ListActions = listSlice.actions as ListActions;
 
