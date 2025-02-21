@@ -1,14 +1,39 @@
 .sidebarItem {
     padding: 12px 24px;
     margin-bottom: 8px;
+    display: flex;
     transition: background-color .2s ease;
     cursor: pointer;
     opacity: 0.7;
     color: var(--text-color-secondary);
 }
 
+.sidebarItemText {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    flex-grow: 1;
+    margin: 0;
+}
+
+.deleteButton {
+    margin: 0 0 0 auto;
+    opacity: 0;
+    transition: opacity .2s ease;
+    width: 18px;
+    height: 18px;
+}
+
+.sidebarItem:hover .deleteButton:hover {
+    opacity: 1;
+}
+
 .sidebarItem:hover {
     background-color: var(--bg-color-secondary-hover);
+}
+
+.sidebarItem:hover .deleteButton {
+    opacity: .5;
 }
 
 .selected {
