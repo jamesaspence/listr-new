@@ -5,6 +5,9 @@
     cursor: pointer;
     opacity: 0.7;
     color: var(--text-color-secondary);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .sidebarItem:hover {
