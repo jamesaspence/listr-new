@@ -18,7 +18,7 @@
     --bg-color-secondary-hover: var(--blue-gray);
     --text-color-primary: var(--red-brown);
     --text-color-secondary: var(--red-brown);
-    --border-color-primary: var(--blue-gray);
+    --border-color-primary: #2e7acc;
 
     --bg-color-header: var(--paper-off-white);
     --bg-color-sidebar: var(--bg-color-secondary);
