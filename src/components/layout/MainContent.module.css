@@ -1,4 +1,5 @@
 .mainContent {
     flex-grow: 1;
-    margin: 24px;
+    margin: 0 24px 24px;
+    background-color: var(--bg-color-main-content);
 }

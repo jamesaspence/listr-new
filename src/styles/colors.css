@@ -20,8 +20,8 @@
     --text-color-secondary: var(--red-brown);
     --border-color-primary: #2e7acc;
 
-    --bg-color-header: var(--paper-off-white);
-    --bg-color-sidebar: var(--bg-color-secondary);
+    --bg-color-main-content: var(--paper-off-white);
+    --bg-color-sidebar: var(--white);
 
     --button-color-primary: var(--red-brown);
     --button-text-color-primary: var(--white);
