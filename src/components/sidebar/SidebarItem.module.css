@@ -4,7 +4,7 @@
     display: flex;
     transition: background-color .2s ease;
     cursor: pointer;
-    color: var(--text-color-secondary);
+    color: var(--sidebar-text-color);
 }
 
 .sidebarItemText {
@@ -17,11 +17,22 @@
 
 .deleteButton {
     margin: 0 0 0 auto;
-    transition: opacity .2s ease;
     width: 18px;
     height: 18px;
+    fill: var(--sidebar-text-color);
+    transition: fill .2s ease;
 }
 
 .sidebarItem:hover {
-    background-color: var(--bg-color-secondary-hover);
+    background-color: var(--bg-color-sidebar-hover);
+    color: var(--sidebar-text-color-hover);
+}
+
+.sidebarItem:hover .deleteButton {
+    fill: var(--sidebar-text-color-hover);
+}
+
+.selected {
+    background-color: var(--bg-color-sidebar-selected);
+    color: var(--sidebar-text-color-selected)
 }
