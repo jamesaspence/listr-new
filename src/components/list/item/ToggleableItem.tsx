@@ -26,7 +26,7 @@ export const ToggleableItem = ({
       type="button"
       onClick={() => onRemove(item)}
     >
-      Remove
+      Delete
     </Button>
   </div>
 );

@@ -1,4 +1,4 @@
-import { Sidebar } from '../sidebar/Sidebar.tsx';
+// import { Sidebar } from '../sidebar/Sidebar.tsx';
 import { MainContent } from './MainContent.tsx';
 import { ReactNode } from 'react';
 import styles from './SidebarLayout.module.css';
@@ -9,7 +9,7 @@ export type SidebarLayoutProps = {
 
 export const SidebarLayout = ({ children }: SidebarLayoutProps) => (
   <section className={styles.sidebarLayout}>
-    <Sidebar />
+    {/*<Sidebar />*/}
     <MainContent>{children}</MainContent>
   </section>
 );
