@@ -20,7 +20,7 @@ export const useTheme: () => UseThemeReturn = () => {
     );
 
   useEffect(() => {
-    document.documentElement.className = `${theme}-theme`;
+    document.documentElement.dataset.theme = `${theme}`;
   }, [theme]);
 
   return [theme, setTheme];

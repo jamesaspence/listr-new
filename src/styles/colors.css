@@ -10,12 +10,12 @@
     --text-black: var(--black);
 
     /* Theme colors */
-    --bg-color-primary: var(--black);
-    --bg-color-secondary: var(--dark-blue);
-    --bg-color-secondary-hover: var(--blue-gray);
-    --text-color-primary: var(--off-white);
-    --text-color-secondary: var(--off-white);
-    --border-color-primary: #777;
+    --bg-color-primary: var(--white);
+    --bg-color-secondary: var(--off-white);
+    --bg-color-secondary-hover: var(--dark-blue);
+    --text-color-primary: var(--dark-blue);
+    --text-color-secondary: var(--dark-blue);
+    --border-color-primary: var(--blue-gray);
 
     --bg-color-header: var(--bg-color-secondary);
     --bg-color-sidebar: var(--bg-color-secondary);
@@ -24,18 +24,18 @@
     --button-color-primary: var(--green);
     --button-text-color-primary: var(--white);
 
-    --change-theme-button-color: var(--off-white);
-    --change-theme-button-color-hover: var(--white);
-}
-
-html.light-theme {
-    --bg-color-primary: var(--white);
-    --bg-color-secondary: var(--off-white);
-    --bg-color-secondary-hover: var(--dark-blue);
-    --text-color-primary: var(--dark-blue);
-    --text-color-secondary: var(--dark-blue);
-    --border-color-primary: var(--blue-gray);
-
     --change-theme-button-color: var(--dark-blue);
     --change-theme-button-color-hover: var(--blue-gray);
+}
+
+html[data-theme='dark'] {
+    --bg-color-primary: var(--black);
+    --bg-color-secondary: var(--dark-blue);
+    --bg-color-secondary-hover: var(--blue-gray);
+    --text-color-primary: var(--off-white);
+    --text-color-secondary: var(--off-white);
+    --border-color-primary: #777;
+
+    --change-theme-button-color: var(--off-white);
+    --change-theme-button-color-hover: var(--white);
 }
