@@ -6,18 +6,21 @@
     --off-white: #dedede;
     --green: #39a427;
 
+    --paper-off-white: #fcf3ca;
+    --red-brown: #6d1f0c;
+
     --text-white: var(--off-white);
     --text-black: var(--black);
 
     /* Theme colors */
-    --bg-color-primary: var(--white);
+    --bg-color-primary: var(--paper-off-white);
     --bg-color-secondary: var(--off-white);
-    --bg-color-secondary-hover: var(--dark-blue);
-    --text-color-primary: var(--dark-blue);
-    --text-color-secondary: var(--dark-blue);
+    --bg-color-secondary-hover: var(--blue-gray);
+    --text-color-primary: var(--red-brown);
+    --text-color-secondary: var(--red-brown);
     --border-color-primary: var(--blue-gray);
 
-    --bg-color-header: var(--bg-color-secondary);
+    --bg-color-header: var(--paper-off-white);
     --bg-color-sidebar: var(--bg-color-secondary);
     --bg-new-item-input: var(--bg-color-secondary);
 
