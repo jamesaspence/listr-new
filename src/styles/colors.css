@@ -28,14 +28,14 @@
     --change-theme-button-color-hover: var(--blue-gray);
 }
 
-html[data-theme='dark'] {
-    --bg-color-primary: var(--black);
-    --bg-color-secondary: var(--dark-blue);
-    --bg-color-secondary-hover: var(--blue-gray);
-    --text-color-primary: var(--off-white);
-    --text-color-secondary: var(--off-white);
-    --border-color-primary: #777;
+/*html[data-theme='dark'] {*/
+/*    --bg-color-primary: var(--black);*/
+/*    --bg-color-secondary: var(--dark-blue);*/
+/*    --bg-color-secondary-hover: var(--blue-gray);*/
+/*    --text-color-primary: var(--off-white);*/
+/*    --text-color-secondary: var(--off-white);*/
+/*    --border-color-primary: #777;*/
 
-    --change-theme-button-color: var(--off-white);
-    --change-theme-button-color-hover: var(--white);
-}
+/*    --change-theme-button-color: var(--off-white);*/
+/*    --change-theme-button-color-hover: var(--white);*/
+/*}*/
