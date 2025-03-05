@@ -36,3 +36,7 @@
     background-color: var(--bg-color-sidebar-selected);
     color: var(--sidebar-text-color-selected)
 }
+
+.selected .deleteButton {
+    fill: var(--sidebar-text-color-selected);
+}

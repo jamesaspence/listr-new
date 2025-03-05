@@ -5,6 +5,6 @@
     font-size: 16px;
     cursor: pointer;
     border-radius: 4px;
-    background-color: var(--button-color-primary);
+    background-color: var(--bg-color-button-primary);
     color: var(--button-text-color-primary);
 }
