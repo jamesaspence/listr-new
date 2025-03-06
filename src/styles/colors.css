@@ -12,10 +12,16 @@
     --light-purple: #5960bb;
     --darker-purple: #3f46a1;
 
+    --moss-green: #135b3f;
+    --light-moss-green: #559672;
+    --lighter-moss-green: #bcdcc9;
+    --purple: #7d5ba6;
+    --light-lavender: #dfd9e2;
+
     /* Theme colors */
     --bg-color-primary: var(--white);
-    --text-color-primary: var(--black);
-    --border-color-primary: var(--darker-purple);
+    --text-color-primary: var(--dark-blue);
+    --border-color-primary: var(--black);
 
     --bg-color-main-content: var(--bg-color-primary);
 
@@ -26,12 +32,13 @@
     --change-theme-button-color-hover: var(--blue-gray);
 
     /* Sidebar colors */
-    --bg-color-sidebar: var(--white);
-    --bg-color-sidebar-hover: var(--darker-purple);
-    --bg-color-sidebar-selected: var(--light-purple);
-    --sidebar-text-color: var(--black);
+    --bg-color-sidebar: var(--dark-blue);
+    --bg-color-sidebar-hover: var(--light-purple);
+    --bg-color-sidebar-selected: var(--darker-purple);
+    --sidebar-header-color: var(--off-white);
+    --sidebar-text-color: var(--off-white);
     --sidebar-text-color-hover: var(--white);
-    --sidebar-text-color-selected: var(--white);
+    --sidebar-text-color-selected: var(--off-white);
 }
 
 /*html[data-theme='dark'] {*/

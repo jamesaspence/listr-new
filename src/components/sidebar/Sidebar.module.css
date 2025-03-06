@@ -1,19 +1,14 @@
 .sidebar {
     padding: 24px 0;
     background-color: var(--bg-color-sidebar);
-    min-width: 150px;
-    max-width: 30%;
+    width: 320px;
     display: flex;
     flex-direction: column;
     justify-content: start;
-    box-shadow: 2px 0 12px #bbb;
-}
-
-.divider {
-    margin: 24px 12px;
 }
 
 .logoDisclaimer {
+    color: var(--sidebar-text-color);
     margin: auto 12px 0;
     font-style: italic;
     display: inline-block;
@@ -21,5 +16,5 @@
 }
 
 .logoDisclaimerLink {
-    color: var(--text-color-primary);
+    color: var(--sidebar-text-color);
 }

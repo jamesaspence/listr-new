@@ -6,7 +6,7 @@ export type PlusSvgProps = CommonSvgProps;
 
 export const PlusSvg = ({ className, ...props }: PlusSvgProps) => (
   <svg
-    className={classNames(styles.svg, className)}
+    className={classNames(className, styles.svg)}
     viewBox="0 0 16 16"
     {...props}
   >

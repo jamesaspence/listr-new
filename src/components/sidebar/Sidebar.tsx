@@ -17,7 +17,6 @@ export const Sidebar = () => {
   return (
     <div className={styles.sidebar}>
       <NewListInput />
-      {lists.length > 0 && <hr className={styles.divider} />}
       {lists.map(list => (
         <SidebarItem
           listId={list.id}

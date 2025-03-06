@@ -1,26 +1,23 @@
-.inputWrapper {
+.wrapper {
     display: flex;
+    margin: 8px 24px;
     align-items: center;
-    margin: 0 12px;
 }
 
-.input {
-    display: block;
-    outline: none;
-    box-sizing: border-box;
-    padding: 8px;
-    border-radius: 4px;
-    font-size: 16px;
-    border: 1px solid var(--border-color-primary);
-    transition: opacity .25s ease;
-    background-color: transparent;
-    color: var(--text-color-primary);
+.listsHeader {
+    color: var(--sidebar-header-color);
+    margin: 0;
 }
 
-.plusSvg {
-    margin-left: 8px;
-    cursor: pointer;
-    transition: opacity .25s ease;
+.wrapper .newListButton {
     width: 20px;
     height: 20px;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 28px;
+    stroke: var(--sidebar-header-color);
+    margin-right: 0;
+    margin-left: auto;
+    cursor: pointer;
 }
