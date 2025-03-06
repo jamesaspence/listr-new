@@ -8,6 +8,7 @@ import {
 } from '../../redux/slices/list.ts';
 import { SidebarItem } from './SidebarItem.tsx';
 import { NewListInput } from './NewListInput.tsx';
+import classNames from 'classnames';
 
 export const Sidebar = () => {
   const activeList = useSelector(selectActiveListId);
@@ -15,7 +16,7 @@ export const Sidebar = () => {
   const dispatch = useDispatch();
 
   return (
-    <div className={styles.sidebar}>
+    <div className={classNames(styles.sidebar, styles.open)}>
       <NewListInput />
       {lists.map(list => (
         <SidebarItem

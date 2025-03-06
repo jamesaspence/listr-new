@@ -1,7 +1,15 @@
+.sidebarHeaderWrapper {
+    display: flex;
+    margin: 8px 24px;
+    align-items: center;
+}
+
 .sidebar {
     padding: 24px 0;
+    box-sizing: border-box;
     background-color: var(--bg-color-sidebar);
     width: 320px;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -17,4 +25,21 @@
 
 .logoDisclaimerLink {
     color: var(--sidebar-text-color);
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        position: fixed;
+        width: 100%;
+        right: 100%;
+        transition: right .4s ease;
+    }
+
+    .sidebar.open {
+        right: 0;
+    }
+
+    .sidebarExpander {
+        display: block;
+    }
 }
