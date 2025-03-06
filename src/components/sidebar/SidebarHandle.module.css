@@ -1,0 +1,9 @@
+.sidebarHandle {
+    margin: 12px;
+}
+
+.sidebarLogo {
+    fill: var(--logo-color);
+    width: 36px;
+    height: 36px;
+}

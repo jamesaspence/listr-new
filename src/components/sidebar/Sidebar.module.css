@@ -1,21 +1,33 @@
-.sidebarHeaderWrapper {
-    display: flex;
-    margin: 8px 24px;
-    align-items: center;
-}
-
 .sidebar {
     background-color: var(--bg-color-sidebar);
     width: 320px;
     min-height: 100vh;
     box-sizing: border-box;
-    padding: 24px 0;
+    display: flex;
 }
 
 .sidebarContents {
     display: flex;
     flex-direction: column;
     justify-content: start;
+    height: 100%;
+    flex-grow: 1;
+}
+
+.sidebarContentHeader {
+    margin: 12px;
+}
+
+.headerText, .headerVersion {
+    color: var(--sidebar-text-color);
+}
+
+.headerText {
+    margin: 0;
+}
+
+.headerVersion {
+    font-size: 12px;
 }
 
 .logoDisclaimer {

@@ -22,6 +22,7 @@
     --bg-color-primary: var(--white);
     --text-color-primary: var(--dark-blue);
     --border-color-primary: var(--black);
+    --logo-color: var(--lighter-moss-green);
 
     --bg-color-main-content: var(--bg-color-primary);
 

@@ -1,10 +1,11 @@
 .sidebarItem {
-    padding: 12px 24px;
+    padding: 8px 12px;
     margin-bottom: 8px;
     display: flex;
-    transition: background-color .2s ease;
+    transition: border-color .2s ease;
     cursor: pointer;
     color: var(--sidebar-text-color);
+    border-right: 8px solid transparent;
 }
 
 .sidebarItemText {
@@ -24,7 +25,7 @@
 }
 
 .sidebarItem:hover {
-    background-color: var(--bg-color-sidebar-hover);
+    border-color: var(--bg-color-sidebar-hover);
     color: var(--sidebar-text-color-hover);
 }
 
@@ -33,7 +34,7 @@
 }
 
 .selected {
-    background-color: var(--bg-color-sidebar-selected);
+    border-color: var(--bg-color-sidebar-selected);
     color: var(--sidebar-text-color-selected)
 }
 
