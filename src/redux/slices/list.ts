@@ -176,7 +176,7 @@ export const listSlice = createSlice<ListState, SliceCaseReducers<ListState>>({
 export const selectActiveListId = (state: RootState): Nullable<string> =>
   state.list.activeList;
 
-export const selectLists = (state: RootState) => state.list.lists;
+export const selectLists = (state: RootState): List[] => state.list.lists;
 
 export const selectActiveList = createSelector(
   [selectActiveListId, selectLists],
