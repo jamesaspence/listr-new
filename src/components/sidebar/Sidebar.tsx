@@ -21,17 +21,6 @@ export const Sidebar = () => {
         </div>
         <NewListInput />
         <SidebarList lists={lists} activeListId={activeListId} />
-        <small className={styles.logoDisclaimer}>
-          Uicons by{' '}
-          <a
-            className={styles.logoDisclaimerLink}
-            href="https://www.flaticon.com/uicons"
-            target="_blank"
-            referrerPolicy="no-referrer"
-          >
-            Flaticon
-          </a>
-        </small>
       </div>
     </div>
   );
