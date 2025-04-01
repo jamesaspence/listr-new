@@ -1,36 +1,23 @@
-.inputWrapper {
+.wrapper {
     display: flex;
+    margin: 8px 20px 8px 12px;
     align-items: center;
-    margin: 0 12px;
 }
 
-.input {
-    display: block;
-    outline: none;
-    box-sizing: border-box;
-    padding: 8px;
-    border-radius: 4px;
-    font-size: 16px;
-    border: 1px solid var(--border-color-primary);
-    transition: opacity .25s ease;
-    background-color: transparent;
-    opacity: 0.7;
-    color: var(--text-color-primary);
+.listsHeader {
+    color: var(--sidebar-header-color);
+    margin: 0;
 }
 
-.input:focus {
-    opacity: 1;
-}
-
-.plusSvg {
-    margin-left: 8px;
-    cursor: pointer;
-    transition: opacity .25s ease;
+.newListButton {
     width: 20px;
     height: 20px;
-    opacity: 0.7;
-}
-
-.plusSvg:hover {
-    opacity: 1;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 28px;
+    stroke: var(--sidebar-header-color);
+    margin-right: 0;
+    margin-left: auto;
+    cursor: pointer;
 }

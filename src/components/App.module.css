@@ -1,0 +1,12 @@
+
+.logoDisclaimer {
+    color: var(--text-color-primary);
+    margin: auto 12px 0;
+    font-style: italic;
+    display: inline-block;
+    align-self: center;
+}
+
+.logoDisclaimerLink {
+    color: var(--text-color-primary);
+}

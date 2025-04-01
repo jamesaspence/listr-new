@@ -1,6 +1,8 @@
 .wrapper {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--border-color-primary);
 }
 
 .input {
@@ -9,14 +11,7 @@
     padding: 12px;
     display: block;
     flex: 1;
-    border-radius: 8px;
     margin-right: 12px;
     color: var(--text-color-primary);
-    background-color: var(--bg-new-item-input);
-}
-
-@media (min-width: 640px) {
-    .wrapper {
-        flex-direction: row;
-    }
+    background: none;
 }

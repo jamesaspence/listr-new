@@ -17,13 +17,13 @@ export const SidebarItem = ({
   onDelete,
   isActive = false,
 }: SidebarItemProps) => (
-  <div
+  <li
     className={classNames(styles.sidebarItem, {
       [styles.selected]: isActive,
     })}
     onClick={() => onSelect(listId)}
   >
-    <p className={styles.sidebarItemText}>{name}</p>
+    <span className={styles.sidebarItemText}>{name}</span>
     <TrashSvg
       onClick={e => {
         // Stop propagation so we don't fire event to parent to select list
@@ -32,5 +32,5 @@ export const SidebarItem = ({
       }}
       className={styles.deleteButton}
     />
-  </div>
+  </li>
 );
