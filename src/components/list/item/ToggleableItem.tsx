@@ -20,13 +20,13 @@ export const ToggleableItem = ({
       checked={item.checked}
       onChange={() => onToggle(item)}
     />
-    <span className={styles.text}>{item.text}</span>
+    <p className={styles.text}>{item.text}</p>
     <Button
       className={styles.removeButton}
       type="button"
       onClick={() => onRemove(item)}
     >
-      Remove
+      Delete
     </Button>
   </div>
 );

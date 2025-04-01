@@ -1,18 +1,37 @@
 .sidebar {
-    padding: 24px 0;
     background-color: var(--bg-color-sidebar);
-    min-width: 150px;
-    max-width: 30%;
+    width: 320px;
+    min-height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+}
+
+.sidebarContents {
     display: flex;
     flex-direction: column;
     justify-content: start;
+    height: 100%;
+    flex-grow: 1;
 }
 
-.divider {
-    margin: 24px 12px;
+.sidebarContentHeader {
+    margin: 12px;
+}
+
+.headerText, .headerVersion {
+    color: var(--sidebar-text-color);
+}
+
+.headerText {
+    margin: 0;
+}
+
+.headerVersion {
+    font-size: 12px;
 }
 
 .logoDisclaimer {
+    color: var(--sidebar-text-color);
     margin: auto 12px 0;
     font-style: italic;
     display: inline-block;
@@ -20,5 +39,22 @@
 }
 
 .logoDisclaimerLink {
-    color: var(--text-color-primary);
+    color: var(--sidebar-text-color);
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        position: absolute;
+        width: 48px;
+        transition: .2s ease;
+        overflow: hidden;
+    }
+
+    .sidebar.open {
+        width: 100%;
+    }
+
+    .sidebarExpander {
+        display: block;
+    }
 }

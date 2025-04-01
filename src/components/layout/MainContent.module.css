@@ -1,4 +1,13 @@
 .mainContent {
     flex-grow: 1;
-    margin: 24px;
+    margin: 0 24px 24px;
+    background-color: var(--bg-color-main-content);
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 480px) {
+    .mainContent {
+        margin-left: 72px;
+    }
 }

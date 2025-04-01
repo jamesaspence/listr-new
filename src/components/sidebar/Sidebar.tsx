@@ -1,44 +1,52 @@
 import styles from './Sidebar.module.css';
-import { useDispatch, useSelector } from 'react-redux';
-import {
-  deleteList,
-  selectActiveListId,
-  selectLists,
-  setActiveList,
-} from '../../redux/slices/list.ts';
-import { SidebarItem } from './SidebarItem.tsx';
 import { NewListInput } from './NewListInput.tsx';
+import classNames from 'classnames';
+import { SidebarList } from './SidebarList.tsx';
+import { useSelector } from 'react-redux';
+import { selectActiveListId, selectLists } from '../../redux/slices/list.ts';
+import { SidebarHandle } from './SidebarHandle.tsx';
+import packageInfo from '../../../package.json';
+import { useState } from 'react';
+import { deleteList, setActiveList } from '../../redux/slices/list.ts';
+import { useDispatch } from 'react-redux';
 
 export const Sidebar = () => {
-  const activeList = useSelector(selectActiveListId);
+  const activeListId = useSelector(selectActiveListId);
   const lists = useSelector(selectLists);
+  const [open, setOpen] = useState(false);
+
   const dispatch = useDispatch();
 
+  const onListSelect = (listId: string) => {
+    dispatch(setActiveList(listId));
+    setOpen(false);
+  };
+
+  const onListDelete = (listId: string) => {
+    dispatch(deleteList(listId));
+    setOpen(false);
+  };
+
   return (
-    <div className={styles.sidebar}>
-      <NewListInput />
-      {lists.length > 0 && <hr className={styles.divider} />}
-      {lists.map(list => (
-        <SidebarItem
-          listId={list.id}
-          key={list.id}
-          name={list.name}
-          onSelect={listId => dispatch(setActiveList(listId))}
-          onDelete={listId => dispatch(deleteList(listId))}
-          isActive={activeList === list.id}
+    <div
+      className={classNames(styles.sidebar, {
+        [styles.open]: open,
+      })}
+    >
+      <SidebarHandle onToggleOpen={() => setOpen(!open)} />
+      <div className={classNames(styles.sidebarContents)}>
+        <div className={styles.sidebarContentHeader}>
+          <h5 className={styles.headerText}>Listr</h5>
+          <small className={styles.headerVersion}>v{packageInfo.version}</small>
+        </div>
+        <NewListInput />
+        <SidebarList
+          lists={lists}
+          activeListId={activeListId}
+          onListSelect={onListSelect}
+          onListDelete={onListDelete}
         />
-      ))}
-      <small className={styles.logoDisclaimer}>
-        Uicons by{' '}
-        <a
-          className={styles.logoDisclaimerLink}
-          href="https://www.flaticon.com/uicons"
-          target="_blank"
-          referrerPolicy="no-referrer"
-        >
-          Flaticon
-        </a>
-      </small>
+      </div>
     </div>
   );
 };
