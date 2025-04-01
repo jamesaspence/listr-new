@@ -1,18 +1,21 @@
 import styles from './SidebarList.module.css';
 import { SidebarItem } from './SidebarItem.tsx';
-import { deleteList, setActiveList } from '../../redux/slices/list.ts';
-import { useDispatch } from 'react-redux';
 import { List } from '../../util/list.ts';
 import { Nullable } from '../../types';
 
 export type SidebarListProps = {
   lists: List[];
   activeListId: Nullable<string>;
+  onListSelect: (listId: string) => void;
+  onListDelete: (listId: string) => void;
 };
 
-export const SidebarList = ({ lists, activeListId }: SidebarListProps) => {
-  const dispatch = useDispatch();
-
+export const SidebarList = ({
+  lists,
+  activeListId,
+  onListSelect,
+  onListDelete,
+}: SidebarListProps) => {
   return (
     <ul className={styles.sidebarList}>
       {lists.map(list => (
@@ -20,8 +23,8 @@ export const SidebarList = ({ lists, activeListId }: SidebarListProps) => {
           listId={list.id}
           key={list.id}
           name={list.name}
-          onSelect={listId => dispatch(setActiveList(listId))}
-          onDelete={listId => dispatch(deleteList(listId))}
+          onSelect={onListSelect}
+          onDelete={onListDelete}
           isActive={activeListId === list.id}
         />
       ))}
