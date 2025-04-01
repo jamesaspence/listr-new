@@ -46,7 +46,7 @@
     .sidebar {
         position: absolute;
         width: 48px;
-        transition: .5s ease;
+        transition: .2s ease;
         overflow: hidden;
     }
 

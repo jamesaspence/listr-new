@@ -35,7 +35,8 @@
 
 .selected {
     border-color: var(--bg-color-sidebar-selected);
-    color: var(--sidebar-text-color-selected)
+    color: var(--sidebar-text-color-selected);
+    font-weight: bold;
 }
 
 .selected .deleteButton {
