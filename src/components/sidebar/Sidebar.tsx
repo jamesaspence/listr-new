@@ -32,7 +32,12 @@ export const Sidebar = () => {
         [styles.open]: open,
       })}
     >
-      <SidebarHandle onToggleOpen={() => setOpen(!open)} lists={lists} />
+      <SidebarHandle
+        onToggleOpen={() => setOpen(!open)}
+        lists={lists}
+        onListSelect={onListSelect}
+        activeListId={activeListId}
+      />
       <div className={classNames(styles.sidebarContents)}>
         <NewListInput />
         <SidebarList

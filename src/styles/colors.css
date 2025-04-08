@@ -50,6 +50,7 @@
     --sidebar-icon-2-text-color: var(--white);
     --sidebar-icon-3-text-color: var(--white);
     --sidebar-icon-4-text-color: var(--white);
+    --border-color-sidebar-icon-selected: var(--white);
 }
 
 /*html[data-theme='dark'] {*/
