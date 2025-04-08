@@ -11,23 +11,7 @@
     flex-direction: column;
     justify-content: start;
     height: 100%;
-    flex-grow: 1;
-}
-
-.sidebarContentHeader {
-    margin: 12px;
-}
-
-.headerText, .headerVersion {
-    color: var(--sidebar-text-color);
-}
-
-.headerText {
-    margin: 0;
-}
-
-.headerVersion {
-    font-size: 12px;
+    overflow: hidden;
 }
 
 .logoDisclaimer {

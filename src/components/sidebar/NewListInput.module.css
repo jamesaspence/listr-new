@@ -1,7 +1,14 @@
 .wrapper {
     display: flex;
-    margin: 8px 20px 8px 12px;
+    margin: 18px 20px 18px 12px;
     align-items: center;
+}
+
+@media (max-width: 480px) {
+    .wrapper {
+        margin-top: 14px;
+        margin-bottom: 14px;
+    }
 }
 
 .listsHeader {

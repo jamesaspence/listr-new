@@ -1,6 +1,7 @@
 .sidebarItem {
     padding: 8px 12px;
     margin-bottom: 8px;
+    height: 20px;
     display: flex;
     transition: border-color .2s ease;
     cursor: pointer;
@@ -17,11 +18,12 @@
 }
 
 .deleteButton {
-    margin: 0 0 0 auto;
+    margin: 0 0 0 6px;
     width: 18px;
     height: 18px;
     fill: var(--sidebar-text-color);
     transition: fill .2s ease;
+    flex: 0 0 auto;
 }
 
 .sidebarItem:hover {
