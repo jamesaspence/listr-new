@@ -5,7 +5,6 @@ import { SidebarList } from './SidebarList.tsx';
 import { useSelector } from 'react-redux';
 import { selectActiveListId, selectLists } from '../../redux/slices/list.ts';
 import { SidebarHandle } from './SidebarHandle.tsx';
-import packageInfo from '../../../package.json';
 import { useState } from 'react';
 import { deleteList, setActiveList } from '../../redux/slices/list.ts';
 import { useDispatch } from 'react-redux';
@@ -33,12 +32,8 @@ export const Sidebar = () => {
         [styles.open]: open,
       })}
     >
-      <SidebarHandle onToggleOpen={() => setOpen(!open)} />
+      <SidebarHandle onToggleOpen={() => setOpen(!open)} lists={lists} />
       <div className={classNames(styles.sidebarContents)}>
-        <div className={styles.sidebarContentHeader}>
-          <h5 className={styles.headerText}>Listr</h5>
-          <small className={styles.headerVersion}>v{packageInfo.version}</small>
-        </div>
         <NewListInput />
         <SidebarList
           lists={lists}

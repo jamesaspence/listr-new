@@ -40,6 +40,16 @@
     --sidebar-text-color: var(--off-white);
     --sidebar-text-color-hover: var(--white);
     --sidebar-text-color-selected: var(--off-white);
+
+    /* Sidebar list icon colors */
+    --bg-color-sidebar-icon-1: var(--moss-green);
+    --bg-color-sidebar-icon-2: var(--darker-purple);
+    --bg-color-sidebar-icon-3: #c57904;
+    --bg-color-sidebar-icon-4: #91022d;
+    --sidebar-icon-1-text-color: var(--white);
+    --sidebar-icon-2-text-color: var(--white);
+    --sidebar-icon-3-text-color: var(--white);
+    --sidebar-icon-4-text-color: var(--white);
 }
 
 /*html[data-theme='dark'] {*/

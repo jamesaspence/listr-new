@@ -8,6 +8,50 @@
     height: 36px;
 }
 
+.listNameIcons {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.listNameIcon {
+    color: white;
+    background-color: red;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    margin: 2px 0;
+}
+
+.listNameIcon-1 {
+    background-color: var(--bg-color-sidebar-icon-1);
+    color: var(--sidebar-icon-1-text-color);
+}
+
+.listNameIcon-2 {
+    background-color: var(--bg-color-sidebar-icon-2);
+    color: var(--sidebar-icon-2-text-color);
+}
+
+.listNameIcon-3 {
+    background-color: var(--bg-color-sidebar-icon-3);
+    color: var(--sidebar-icon-3-text-color);
+}
+
+.listNameIcon-4 {
+    background-color: var(--bg-color-sidebar-icon-4);
+    color: var(--sidebar-icon-4-text-color);
+}
+
 @media (max-width: 480px) {
     .sidebarHandle {
         margin: 6px;

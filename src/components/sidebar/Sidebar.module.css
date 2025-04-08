@@ -14,22 +14,6 @@
     overflow: hidden;
 }
 
-.sidebarContentHeader {
-    margin: 12px;
-}
-
-.headerText, .headerVersion {
-    color: var(--sidebar-text-color);
-}
-
-.headerText {
-    margin: 0;
-}
-
-.headerVersion {
-    font-size: 12px;
-}
-
 .logoDisclaimer {
     color: var(--sidebar-text-color);
     margin: auto 12px 0;
